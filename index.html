@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="theme-color" content="#eeeeee">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <link rel="apple-touch-icon" href="img/webapp-icon.png">
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+  <title>Furuparkskolan - De försvunna eleverna</title>
+
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+
+  <div id="game-title">
+    <h1>FURUPARKSKOLAN</h1>
+    <h2>De försvunna eleverna</h2>
+  </div><!-- end game-title -->
+
+  <div id="game-info">
+    <button id="start-button">Starta spel</button>
+
+    <p>
+	    Under en skolutflykt till skogen försvann plötsligt alla elever.<br>
+      Hjälp Kim att hitta eleverna så att de inte missar bussen tillbaka till skolan.</br>
+    </p>
+    <p>
+      Använd piltangenterna för att flytta spelaren.<br>
+    </p>
+  </div><!-- end game-info -->
+
+  <div id="countdown">00:00</div>
+  <div id="counter"><img src="img/kid.png"> <span>0/25</span></div>
+  <div id="playground">
+    <div id="character"></div>
+  </div>
+
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
