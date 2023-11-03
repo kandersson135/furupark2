@@ -7,7 +7,7 @@ $(document).ready(function() {
   var playgroundHeight = $("#playground").height();
   var character = $("#character");
   var stepSize = 8;
-  var timeRemaining = 330;
+  var timeRemaining = 300;
   var countdownElement = $("#countdown");
   var initialPosition = { top: 80, left: 80 };
   var newPosition;
