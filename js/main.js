@@ -8,8 +8,9 @@ $(document).ready(function() {
   var character = $("#character");
   var stepSize = 8;
   var timeRemaining = 300;
+  var countdownTimeout;
   var countdownElement = $("#countdown");
-  var initialPosition = { top: 80, left: 80 };
+  var initialPosition = { top: 75, left: 75 };
   var newPosition;
 
   character.css(initialPosition);
@@ -91,9 +92,10 @@ $(document).ready(function() {
         playRandomSound(); // Play a random sound
 
         if (foundChildren === totalChildren) {
-          clearInterval(timeRemaining);
-          alert("Bra jobbat, du hjälpte Kim att hitta alla försvunna elever!");
-          location.reload();
+          clearTimeout(countdownTimeout);
+          swal("Bra jobbat!", "Du hjälpte till att hitta alla försvunna elever!").then((value) => {
+					  location.reload(); // Reload page
+					});
         }
       }
     });
@@ -128,9 +130,7 @@ $(document).ready(function() {
   }
 
   // Run the function at the specified interval
-  setInterval(myFunction, getRandomDelay());
-
-
+  //setInterval(myFunction, getRandomDelay());
 
   // Function to update the countdown display
   function updateCountdown() {
@@ -140,7 +140,6 @@ $(document).ready(function() {
     countdownElement.text(formattedTime);
 
     if (timeRemaining <= 0) {
-      clearInterval(timeRemaining);
       $('.object').addClass('animate-circle');
       busSound.play();
       disableCharacterMovement();
@@ -151,7 +150,7 @@ $(document).ready(function() {
       //location.reload(); // Reload the page when time is up
     } else {
       timeRemaining--;
-      setTimeout(updateCountdown, 1000); // Update countdown every 0.5 seconds (adjust this value as desired)
+      countdownTimeout = setTimeout(updateCountdown, 1000); // Update countdown every second
     }
   }
 
