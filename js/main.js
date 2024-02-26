@@ -171,6 +171,8 @@ $(document).ready(function() {
     $("#countdown").show();
     $("#game-title").hide();
     $("#game-info").hide();
+    $("#version-info").hide();
+    $("#credit-info").hide();
     // Start the countdown
     updateCountdown();
   });
